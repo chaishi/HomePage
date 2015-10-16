@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>丞风</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
+		<link rel="stylesheet" href="css/ace-fonts.css" />
+		<link rel="stylesheet" href="css/jquery.gridly.css" />
+		<link rel="stylesheet" type="text/css" href="css/format.css"/>
+		<link rel="stylesheet" href="css/style.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default ">		
+			<div class="navbar-container cb" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler fL" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-header fL">
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							 快捷物流管理系统
+						</small>
+					</a>
+				</div>
+				<div class="navbar-buttons navbar-header fR" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="grey">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+						</li>
+
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+						</li>
+
+						<li class="green">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+						</li>
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="img/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									
+									陈锟
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										设置
+									</a>
+								</li>
+
+								<li>
+									<a href="">
+										<i class="ace-icon fa fa-user"></i>
+										个人中心
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										退出
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-container" id="main-container">
+			<div id="sidebar" class="sidebar    responsive">
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="index.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> 我的桌面 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								基础数据
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									网点管理
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											网点管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											区域管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											国家管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											网点限制
+										</a>
+
+										<b class="arrow"></b>
+									</li>															
+								</ul>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									网点查询
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									权限管理
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											员工管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											用户管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											岗位管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											部门管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											岗位角色管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											密码修改
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											角色管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									客户管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									系统参数管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									数据字典
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									型号管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									承包区管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									仓库管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									运单规则管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									文件服务器管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									基础数据物料管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									新闻NEWS
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									费用项目管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> 系统管理 </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									资源管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									菜单管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> 财务管理 </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									中心报价管理
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											中转费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											收费扫描
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											派件描费
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											派件费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											回单费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											付派站到付款手续费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											收寄站到付款手续费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											收超重费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											付超重费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											收寄站代收货款手续费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											代派站代收货款手续费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											整车费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											保价费报价
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											报价审批
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											报价测试
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									网点报价管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									特殊报价管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									网点报价
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											网点报价管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											网点报价测试
+										</a>
+
+										<b class="arrow"></b>
+									</li>															
+								</ul>
+							</li>
+
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									账单管理
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											中心账单管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											网点账单管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											中心账单汇总
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											账单查询
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											交易查询
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											交易查询（网点）
+										</a>
+
+										<b class="arrow"></b>
+									</li>	
+								</ul>
+							</li>
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									账单查询
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											交易查询（销户）
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											交易汇总查询
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											银行充值查询
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="">
+											<i class="menu-icon fa fa-caret-right"></i>
+											开户管理
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+									
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>			
+			</div>
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon">									
+								</i>
+								<a href="">首页</a>
+							</li>
+							<li class="active">
+								我的桌面
+							</li>
+						</ul>
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search..." class="nav-search-input" id="nav-search-input" autocomplete="off"/>
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div>
+					</div>
+					<div class="">
+						<div id="content">
+							<!--app应用添加引导-->
+							<div class="app-guide-wrap">
+								<div class="app-guide">
+									<!--小圆点数量，app屏幕数量-->
+									<img src="http://42.96.175.100/static/theme/15/images/slidebox/1.png"/>
+									<img src="http://42.96.175.100/static/theme/15/images/slidebox/2.png"/>
+									<img src="http://42.96.175.100/static/theme/15/images/slidebox/3.png"/>	
+									<img id="moreApp" src="http://42.96.175.100/static/theme/15/images/slidebox/4.png" />
+								</div>
+							</div><!--app应用添加引导结束-->
+							
+							<div class="app-pages-wrap">
+							
+							<div id="app-pages" class="app-pages">
+								<!--app分屏-->
+								<div class="app-page">
+									<div class="gridly app-list">
+									  <!--<div class="brick app-demo">
+									  		<button class="delete-btn">移除</button>
+											<div class="app-img">
+												<img src="http://42.96.175.100/static/theme/15/images/app_icons/calendar.png" alt="日程安排" />
+											</div>
+											<div class="app-title">日程安排</div>
+									  </div>-->
+									</div>
+								</div><!--app分屏结束-->
+								<!--app分屏-->
+								<div class="app-page">
+									<!--app列表-->
+									<div class="gridly app-list"></div>
+								</div>
+										
+							</div>
+							
+							</div> <!--app.page.wrap结束-->
+							
+							
+							<!--弹出app应用管理弹框-->
+							<div id="appManager">
+								<!--弹框蒙版，半透明-->
+								<div class="dialog-pannel">
+									<div class="dialog-app-content">
+										<button class="close-btn" id="closeAppMngr">关闭</button>
+										<div class="dialog-topbar">应用盒子</div>
+										<div class="dialog-guide">
+											<img src="http://42.96.175.100/static/theme/15/images/appbox/bar_btn_appset.png" /><!--应用设置-->
+											<img src="http://42.96.175.100/static/theme/15/images/appbox/bar_btn_screenset.png" /><!--分屏设置-->
+											<span class="warning-info"></span>
+										</div>
+										<!--应用设置-->
+										<div class="app-setting">
+											<div class="dialog-sidebar">
+												<div class="sidebar-up"><span class="rec-up"></span></div>
+												<div class="sidebar-middle">
+													<!--app分类列表内容如下，勿删-->
+													<!--<ul>
+														<li><img src="img/icon1.png"/>个人事务</li>
+														<li><img src="img/icon1.png"/>日程安排</li>
+														<li><img src="img/icon1.png"/>系统管理</li>
+													</ul>-->
+												</div>
+												<div class="sidebar-down"><span class="rec-down"></span></div>
+											</div>
+											<div class="dialog-app-list">
+												<!--弹框右侧app列表内容如下，勿删-->
+												<!--<div class="group-one-app">
+													<div class="one-app-img">
+														<img src="http://42.96.175.100/static/theme/15/images/app_icons/calendar.png" align="日程安排">
+													</div>
+													<div class="one-app-title">日程安排</div>
+												</div>-->
+											</div>
+										</div>
+										<!--分屏设置-->
+										<div class="screen-setting">
+											<div class="screen-num">
+												<div class="screen-num-in">
+													<span>1</span>
+													<button>删除</button>
+												</div>
+											</div>
+											<div class="screen-add">+</div>
+										</div>
+									</div>
+								</div>
+							</div><!--弹出app应用管理弹框结束-->
+							
+						</div><!--content结束-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" ></script>
+	<script src="js/bootstrap.js"></script>	
+	<script src="js/ace.js"></script>		
+	<script src="js/ace.sidebar.js"></script>
+	<script src="js/ace.sidebar-scroll-1.js"></script>
+	<script src="js/ace.submenu-hover.js"></script>
+	<script src="js/interface.js"></script>
+	<script src="js/jquery.gridly.js"></script>
+	<script src="js/index.js"></script>
+</html>
