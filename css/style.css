@@ -2259,8 +2259,11 @@ no_such_element:-o-prefocus,
   }
 }
 .main-content-inner {
-  float: left;
-  width: 100%;
+  /*float: left;
+  width: 100%;*/
+ position: absolute;
+ width: 100%;
+ height: 100%;
 }
 .main-content .sidebar:before {
   top: 150px;
