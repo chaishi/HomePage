@@ -1,0 +1,457 @@
+/*
+ * ==================================================================================
+ * @author luoxue
+ * @time 20151022
+ * @deacription 首页相关样式， 字体默认
+ * ==================================================================================
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+#container {
+	width: 100%;
+	height: auto;
+	font-family: heiti;
+}
+
+#topbar {
+	width: 1000px;
+	height: 83px;
+	margin: 0 auto;
+}
+
+#content {
+	width: 100%;
+	height: auto;
+}
+
+#footer {
+	width: 100%;
+	height: 356px;
+	color: #c1c1c1;
+	background-color: #535353;
+}
+
+.display {
+	display: inline-block;
+	*display: inline;
+}
+
+.base-width {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/* ================================================================
+ * @deacription topbar 模块儿
+ * ================================================================
+ */
+
+.topbar-left,
+.topbar-right {
+	float: left;
+	height: 100%;
+}
+
+.topbar-left {
+	width: 430px;
+	background: url(../img/chenjiu-homepage_03.png) left center no-repeat;
+}
+
+.topbar-right {
+	width: 570px;
+}
+
+.topbar-right li{
+	width: 122px;
+	height: 100%;
+	line-height: 83px;	
+	text-align: center;
+	font-size: 20px;
+	color: #333;
+}
+
+.topbar-right li:hover {
+	cursor: pointer;
+	color: #fff;
+	background-color: #ee6922;
+}
+
+.topbar-right .topbar-bg {
+	color: #fff;
+	background-color: #ee6922;
+}
+
+/* ==============================================================
+ * @deacription content 模块儿
+ * ==============================================================
+ */
+
+/*纵向第一部分内容*/
+.content-slide {
+	position: relative;
+	width: 100%;
+	height: 584px;
+	overflow: hidden;
+	box-shadow: 0 0 10px #333;
+}
+
+.content-circles {
+	position: absolute;
+	left: 50%;
+	bottom: 35px;
+	margin-left: -55px;
+	width: 110px;
+	height: 15px;
+}
+
+.one-circle {
+	width: 15px;
+	height: 15px;
+	margin: 0 5px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 1px solid #fff;
+}
+
+.one-circle:hover {
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.circle-bg {
+	background-color: #fff;
+}
+
+.content-screens {
+	width: 300%;
+	height: 100%;
+}
+
+.one-screen {
+	width: 33.33%;
+	height: 100%;
+	float: left;
+}
+
+.slide-first {
+	background-color: #f16b21;
+}
+
+.slide-second {
+	background-color: #00b0f0;
+}
+
+.slide-third {
+	background-color: green;
+}
+
+.screen-indemo {
+	position: relative;
+	height: 100%;
+}
+
+.font-big {
+	font-size: 40px;
+}
+
+.font-normal {
+	font-size: 30px;
+}
+
+.one-screen-left,
+.one-screen-right {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.one-screen-left {
+	left: 0;
+	right: 50%;
+	font-weight: bold;
+	color: #fff;
+	padding: 100px 0 0 80px;
+}
+
+.one-screen-right {
+	right: 0;
+	background: url(../img/chenjiu-homepage_07.png) center center no-repeat;
+}
+
+
+/*纵向第二部分内容*/
+
+.content-orange1 {
+	height: 660px;
+}
+
+.orange1-top {
+	width: 100%;
+	height: 270px;
+	background: url(../img/chenjiu-homepage_11.png) 565px 50px no-repeat;
+}
+
+.orange1-bottom {
+	width: 100%;
+	height: 390px;
+}
+
+.orange1-font {
+    font-size: 35px;
+    color: #333;
+    font-family: "微软雅黑";
+    padding-top: 130px
+}
+
+.font-special {
+	font-size: 50px;
+	color: #ee6922;
+}
+
+.orange1-bottom {
+	*zoom: 1;
+}
+
+.orange1-bottom:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.orange-service {
+	width: 21.33%;
+	float: left;
+	text-align: center;
+}
+
+.orange-service-center {
+	margin:0 18% ;	
+}
+
+.orange-icon {
+	width: 100%;
+}
+
+.orange-title {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.orange-service p{
+	color: #919191;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+/*纵向第三部分内容*/
+
+.content-orange2 {
+	width: 100%;
+	height: 477px;
+	background-color: #e9e9e9;
+}
+
+.orange2-indemo {
+	height: 100%;
+}
+
+.orange-title1,
+.orange-title2 {
+	width: 100%;
+	text-align: center;
+	font-size: 35px;
+	color: #333;
+	font-family: "微软雅黑";
+}
+
+.orange-title1 {
+	padding-top: 50px;
+}
+
+.orange-title2 {
+	padding-top: 20px;
+}
+
+.font-special1 {
+	color: #EE6922;	
+}
+
+.orange2-content {
+	margin-top: 50px;
+}
+
+.orange2-content img {
+	vertical-align: middle;
+}
+
+.orange-desc {
+	width: 420px;
+	font-size: 25px;
+	line-height: 35px;
+	color: #555;
+	margin-left: 80px;
+}
+
+/*纵向第四部分内容*/
+
+.content-orange3 {
+	height: 789px;
+}
+
+.orange3-content {
+	height: 100%;
+}
+
+.orange3-content:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.orange3-content-left,
+.orange3-content-right {
+	width: 45%;
+	float: left;
+	height: 620px;
+}
+
+.orange3-content-left {
+	text-align: center;
+}
+
+.orange3-content-right {
+	margin-left: 6%;
+	margin-top: 30px;
+	border-left: 1px solid #d7d7d7;
+}
+
+.line1 {
+	border-bottom: 1px solid #d7d7d7;
+	padding-bottom: 20px;
+}
+
+.orange-tel {
+	margin-left: 20px;
+}
+
+.one-step {
+	width: 100%;
+}
+
+.onestep-img {
+	margin-left: 55px;
+}
+
+.onestep-center {
+	margin: 100px 0;
+}
+
+.step-title {
+	font-size: 35px;
+	font-family: "微软雅黑";
+	color: #333;
+	margin-left: 30px;
+	line-height: 70px;
+}
+
+.step-desc {
+	color: #919191;
+	line-height: 25px;
+	margin-left: 30px;
+}
+
+/* ===============================================================
+ * @deacription footer 模块儿
+ * ===============================================================
+ */
+
+.footer-top {
+	width: 100%;
+	height: 289px;
+}
+
+.footer-top-indemo {
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 0;
+}
+
+.footer-info1 {
+	width: 290px;
+	height: 100%;
+	background: url(../img/chenjiu-homepage_53.png) center center no-repeat;
+}
+
+.footer-info2 {
+	width: 240px;
+	padding-top: 80px;
+	vertical-align: top;
+}
+
+.footer-info3 {
+	width: 170px;
+	height: 100%;
+	background: url(../img/chenjiu-homepage_30.png) left center no-repeat;
+}
+
+.footer-info4 {
+	width: 300px;
+	height: 100%;
+	font-size: 15px;
+	padding-top: 80px;
+	vertical-align: top;
+}
+
+.hotline-title {
+	font-size: 25px;
+	margin-left: 15px;
+}
+
+.hotline-tel {
+	font-size: 25px;
+	color: #ee6922;
+	margin: 10px 0 10px 0;
+}
+
+.asktime {
+	font-size: 15px;
+}
+
+.footer-info2 img {
+    vertical-align: bottom;
+}
+
+
+.company-info {
+	width: 100%;
+	height: 50px;
+}
+
+.footer-info4 img {
+	vertical-align: middle;
+}
+
+.footer-info4 span {
+	margin-left: 15px;
+}
+
+.footer-bottom {
+	width: 1000px;
+	height: 67px;
+	margin: 0 auto;
+	line-height: 67px;
+	text-align: center;
+	font-size: 15px;
+}
