@@ -6,12 +6,16 @@
 
 (function(window, undefined){
 	
-	var $contentScreens = $('.content-screens');
-	var $contentCircles = $('.content-circles');
+	
+	function init() {
+		getTopbarHtml();
+		getContentHtml();
+		getFooterHtml();
+	}
 	
 	//事件绑定
 	function bindEvent() {
-		$contentCircles.on('click', '.one-circle', function() {
+		$('.content-circles').on('click', '.one-circle', function() {
 			var index = $(this).index();
 			getSlideScreen( index );
 			setCircleActive( index );
@@ -24,7 +28,7 @@
 	 */
 	function getSlideScreen(index) {
 		var margin = 100 * index;
-		$contentScreens.animate({marginLeft: '-' + margin + '%'});
+		$('.content-screens').animate({marginLeft: '-' + margin + '%'});
 	}
 	
 	/*
@@ -41,5 +45,36 @@
 		});
 	}
 	
-	bindEvent();
+	function getTopbarHtml() {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/top.html",
+			success: function(data) {
+				$('#topbar').html(data);
+			}
+		});
+	}
+	
+	function getContentHtml() {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/content.html",
+			success: function(data) {
+				$('#content').html(data);
+				bindEvent();
+			}
+		});
+	}
+	
+	function getFooterHtml() {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/footer.html",
+			success: function(data) {
+				$('#footer').html(data);
+			}
+		});
+	}
+	
+	init();
 })(window)
