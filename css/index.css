@@ -52,6 +52,12 @@ hr {
 	border: 1px solid #d7d7d7;
 }
 
+.filter-top1 {
+	width: 100%;
+	height: 23px;
+	background: url(../img/filter-top1.png) repeat-x;
+}
+
 /* ================================================================
  * @deacription topbar 模块儿
  * ================================================================
@@ -101,9 +107,8 @@ hr {
 .content-slide {
 	position: relative;
 	width: 100%;
-	height: 584px;
+	height: 561px;
 	overflow: hidden;
-	box-shadow: 0 0 10px #333;
 }
 
 .content-circles {
@@ -513,10 +518,9 @@ hr {
 
 #joinUs-screen1 {
 	width: 100%;
-	height: 482px;
+	height: 459px;
 	padding-top: 100px;
 	background-color: #F16B21;
-	box-shadow: 0 0 10px #333;
 	text-align: center;
 	position: relative;
 }
