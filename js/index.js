@@ -4,28 +4,21 @@
  * @description 橙久首页开发js
  */
 
+$(function(){
+	var pathname = location.pathname;
+	switch(pathname) {
+		case '/HomePage/index.html': {page_home.getHomeHtml();getTopbarHtml(0);}break;
+		case '/HomePage/joinUs.html': {getTopbarHtml(3);}break;
+		default:{}break;
+	}
+	getFooterHtml();
+});
+
+/*=====================================================
+ * @description 公共js 
+ ======================================================*/
+
 (function(window, undefined){
-	
-	
-	function init() {
-		var pathname = location.pathname;
-		switch(pathname) {
-			case '/HomePage/index.html': {getHomeHtml();}break;
-			case '/HomePage/joinUs.html': {}break;
-			default:{}break;
-		}
-		getTopbarHtml();
-		getFooterHtml();
-	}
-	
-	//事件绑定
-	function bindEvent() {
-		$('.content-circles').on('click', '.one-circle', function() {
-			var index = $(this).index();
-			getSlideScreen( index );
-			setCircleActive( index );
-		});
-	}
 	
 	//为topbar添加点击事件
 	function addClickToTop() {
@@ -54,6 +47,59 @@
 	}
 	
 	/*
+	 * @description 加载topbar
+	 * @param {number} index eg: index = 3, 在招贤纳士页面，便将对应的topbar背景色切换
+	 */
+	window.getTopbarHtml = function(index) {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/_topbar.html",
+			success: function(data) {
+				$('#topbar').html(data);
+				addClickToTop();
+				setTopbarActive(index);
+			}
+		});
+	}
+	
+	//加载footer
+	window.getFooterHtml = function() {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/_footer.html",
+			success: function(data) {
+				$('#footer').html(data);
+			}
+		});
+	}
+	
+})(window);
+
+/* =====================================================
+ * @description 首页相关js
+ * @author luoxue
+ * @time 20151022
+ =======================================================*/
+
+var page_home = {};
+
+(function(page_home, undefined){
+	
+	function init() {
+		getTopbarHtml();
+		getFooterHtml();
+	}
+	
+	//事件绑定
+	function bindEvent() {
+		$('.content-circles').on('click', '.one-circle', function() {
+			var index = $(this).index();
+			getSlideScreen( index );
+			setCircleActive( index );
+		});
+	}
+	
+	/*
 	 * @description 显示轮播屏幕
 	 * @param {Number} index 当前轮播到第几屏幕
 	 */
@@ -76,8 +122,8 @@
 		});
 	}
 	
-	//加载首页content
-	function getHomeHtml() {
+	//加载首页content html
+	page_home.getHomeHtml = function(){
 		$.ajax({
 			type: "get",
 			url: "/HomePage/_home.html",
@@ -88,35 +134,19 @@
 		});
 	}
 	
-	//加载topbar
-	function getTopbarHtml() {
-		$.ajax({
-			type: "get",
-			url: "/HomePage/_topbar.html",
-			success: function(data) {
-				$('#topbar').html(data);
-				addClickToTop();
-				var pathname = location.pathname;
-				switch(pathname) {
-					case '/HomePage/index.html': {setTopbarActive(0)}break;
-					case '/HomePage/aboutUs.html': {setTopbarActive(2)}break;
-					case '/HomePage/joinUs.html': {setTopbarActive(3)}break;
-					default:break;
-				}
-			}
-		});
-	}
+})(page_home)
+
+
+/* =====================================================
+ * @description 招贤纳士（加入我们） 相关js
+ * @author luoxue
+ * @time 20151022
+ =======================================================*/
+
+var page_hiring = {};
+
+(function(page,undefined){
 	
-	//加载footer
-	function getFooterHtml() {
-		$.ajax({
-			type: "get",
-			url: "/HomePage/_footer.html",
-			success: function(data) {
-				$('#footer').html(data);
-			}
-		});
-	}
 	
-	init();
-})(window)
+	
+})(page_hiring);

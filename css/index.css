@@ -474,6 +474,7 @@
 	background-color: #F16B21;
 	box-shadow: 0 0 10px #333;
 	text-align: center;
+	position: relative;
 }
 
 #joinUs-screen1 p {
@@ -508,6 +509,10 @@
 	border-radius: 10px;
 }
 
+.one-city:hover {
+	cursor: pointer;
+}
+
 .city-active {
 	background-color: #EE6922;
 	color: #fff;
@@ -519,6 +524,10 @@
 	height: 0;
 	border: 10px solid transparent;
 	border-top-color: #EE6922;
-	top: 34px;
+	top: 33px;
     right: 77px;
+}
+
+.visi-hidden {
+	visibility: hidden;
 }
