@@ -27,6 +27,7 @@
 
 #content {
 	width: 100%;
+	min-width: 800px;
 	height: auto;
 }
 
@@ -40,6 +41,7 @@
 .display {
 	display: inline-block;
 	*display: inline;
+	*zoom: 1;
 }
 
 .base-width {
@@ -187,7 +189,7 @@
 }
 
 
-/*纵向第二部分内容*/
+/*===========纵向第二部分内容=============*/
 
 .content-orange1 {
 	height: 660px;
@@ -254,7 +256,7 @@
 	line-height: 25px;
 }
 
-/*纵向第三部分内容*/
+/*===============纵向第三部分内容=================*/
 
 .content-orange2 {
 	width: 100%;
@@ -303,7 +305,7 @@
 	margin-left: 80px;
 }
 
-/*纵向第四部分内容*/
+/*==============纵向第四部分内容==================*/
 
 .content-orange3 {
 	height: 789px;
@@ -454,4 +456,69 @@
 	line-height: 67px;
 	text-align: center;
 	font-size: 15px;
+}
+
+
+/*
+ * ==================================================================================
+ * @author luoxue
+ * @time 20151023
+ * @deacription “加入我们”相关样式
+ * ==================================================================================
+ */
+
+#joinUs-screen1 {
+	width: 100%;
+	height: 482px;
+	padding-top: 100px;
+	background-color: #F16B21;
+	box-shadow: 0 0 10px #333;
+	text-align: center;
+}
+
+#joinUs-screen1 p {
+	font-size: 45px;
+	color: #fff2e8;
+	line-height: 60px;
+	letter-spacing: .3em;
+	font-family: "微软雅黑";
+}
+
+#joinUs-screen2 {
+	height: 975px;
+}
+
+.join-font-normal {
+	color: #333;
+	font-size: 18px;
+	font-family: "微软雅黑";
+}
+
+.join-city {
+	width: 100%;
+	height: 74px;
+	margin-top: 69px;
+}
+
+.one-city {
+	width: 118px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 10px;
+}
+
+.city-active {
+	background-color: #EE6922;
+	color: #fff;
+}
+
+.orange-rect {
+	position: relative;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #EE6922;
+	top: 34px;
+    right: 77px;
 }

@@ -8,8 +8,13 @@
 	
 	
 	function init() {
+		var pathname = location.pathname;
+		switch(pathname) {
+			case '/HomePage/index.html': {getHomeHtml();}break;
+			case '/HomePage/joinUs.html': {}break;
+			default:{}break;
+		}
 		getTopbarHtml();
-		getContentHtml();
 		getFooterHtml();
 	}
 	
@@ -45,20 +50,11 @@
 		});
 	}
 	
-	function getTopbarHtml() {
+	//加载首页content
+	function getHomeHtml() {
 		$.ajax({
 			type: "get",
-			url: "/HomePage/top.html",
-			success: function(data) {
-				$('#topbar').html(data);
-			}
-		});
-	}
-	
-	function getContentHtml() {
-		$.ajax({
-			type: "get",
-			url: "/HomePage/content.html",
+			url: "/HomePage/_home.html",
 			success: function(data) {
 				$('#content').html(data);
 				bindEvent();
@@ -66,10 +62,22 @@
 		});
 	}
 	
+	//加载topbar
+	function getTopbarHtml() {
+		$.ajax({
+			type: "get",
+			url: "/HomePage/_topbar.html",
+			success: function(data) {
+				$('#topbar').html(data);
+			}
+		});
+	}
+	
+	//加载footer
 	function getFooterHtml() {
 		$.ajax({
 			type: "get",
-			url: "/HomePage/footer.html",
+			url: "/HomePage/_footer.html",
 			success: function(data) {
 				$('#footer').html(data);
 			}
