@@ -466,7 +466,48 @@ hr {
  * ==================================================================================
  * @author luoxue
  * @time 20151023
- * @deacription “加入我们”相关样式
+ * @deacription “关于我们”相关样式
+ * ==================================================================================
+ */
+
+#aboutus-content {
+	width: ;
+}
+
+.filter-top {
+	width: 100%;
+	height: 23px;
+	margin-top: -1px;
+	background: url(../img/filterTop.png) repeat-x;
+}
+
+.company-img {
+	width: 100%;
+	height: 347px;
+	margin: 50px 0 80px 0;
+	background: url(../img/about-us.png) center center no-repeat;
+}
+
+.company-intro p {
+	margin-bottom: 20px;
+	text-indent: 2em;
+}
+
+.link-us {
+	margin-bottom: 50px;
+}
+
+.link-us ul{
+	list-style: none;
+	margin-left: 10px;
+}
+
+
+/*
+ * ==================================================================================
+ * @author luoxue
+ * @time 20151023
+ * @deacription “加入我们”(招贤纳士)相关样式
  * ==================================================================================
  */
 
@@ -495,7 +536,7 @@ hr {
 
 .join-font-normal {
 	color: #333;
-	font-size: 17px;
+	font-size: 16px;
 	font-family: "微软雅黑";
 }
 
@@ -577,8 +618,10 @@ hr {
 	margin: 10px 0 0 40px ;
 }
 
-.position-desc li {
+.position-desc li,
+.font-normal-extend {
 	line-height: 35px;
 	color: #555;
 	letter-spacing: .1em;
 }
+

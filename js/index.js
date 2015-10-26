@@ -11,6 +11,9 @@ $(function(){
 			page_home.getHomeHtml();
 			getTopbarHtml(0);
 		}break;
+		case '/HomePage/aboutUs.html': {
+			getTopbarHtml(2);
+		}break;
 		case '/HomePage/joinUs.html': {
 			getTopbarHtml(3);
 			page_hiring.init();
