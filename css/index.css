@@ -9,7 +9,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	list-style: none;
 	text-decoration: none;
 }
 
@@ -47,6 +46,10 @@
 .base-width {
 	width: 1000px;
 	margin: 0 auto;
+}
+
+hr {
+	border: 1px solid #d7d7d7;
 }
 
 /* ================================================================
@@ -486,12 +489,13 @@
 }
 
 #joinUs-screen2 {
-	height: 975px;
+	height: auto;
+	padding-bottom: 20px;
 }
 
 .join-font-normal {
 	color: #333;
-	font-size: 18px;
+	font-size: 17px;
 	font-family: "微软雅黑";
 }
 
@@ -511,6 +515,8 @@
 
 .one-city:hover {
 	cursor: pointer;
+	background-color: #EE6922;
+	color: #fff;
 }
 
 .city-active {
@@ -526,8 +532,53 @@
 	border-top-color: #EE6922;
 	top: 33px;
     right: 77px;
+    visibility: hidden;
 }
 
-.visi-hidden {
-	visibility: hidden;
+.visi-show {
+	visibility: visible;
+}
+
+.pos-list-title {
+	color: #F16B21;
+	margin: 25px 0 0 10px;
+}
+
+.pos-list {
+	margin-bottom: 20px;
+}
+
+.one-position {
+	width: 300px;
+	margin-top: 10px;
+	margin-left: 10px;
+	letter-spacing: .1em;
+}
+
+.position-title {
+	color: #1b0c0c;
+	margin: 25px 0 0 10px;
+}
+
+.sm-rect {
+	width: 10px;
+	height: 17px;
+	background-color: #EE6922;
+	vertical-align: middle;
+}
+
+.desc-title {
+	font-size: 19px;
+	color: #1b0c0c;
+	margin: 20px 0 0 10px;
+}
+
+.position-desc ol {
+	margin: 10px 0 0 40px ;
+}
+
+.position-desc li {
+	line-height: 35px;
+	color: #555;
+	letter-spacing: .1em;
 }
