@@ -27,6 +27,32 @@
 		});
 	}
 	
+	//为topbar添加点击事件
+	function addClickToTop() {
+		$('.topbar-right').on('click', 'li', switchPage);
+	}
+	
+	function switchPage() {
+		var pageTitle = $(this).html();
+		switch(pageTitle) {
+			case '首页': {location.href = 'index.html';}break;
+			case '公司': {}break;
+			case '关于我们': {location.href = 'aboutUs.html';}break;
+			case '招贤纳士': {location.href = 'joinUs.html';}break;
+			default:break;
+		}
+	}
+	
+	function setTopbarActive(index) {
+		$('.topbar-right li').each(function(i) {
+			if(i === index) {
+				$(this).addClass('topbar-bg');
+			}else {
+				$(this).removeClass('topbar-bg');
+			}
+		})
+	}
+	
 	/*
 	 * @description 显示轮播屏幕
 	 * @param {Number} index 当前轮播到第几屏幕
@@ -69,6 +95,14 @@
 			url: "/HomePage/_topbar.html",
 			success: function(data) {
 				$('#topbar').html(data);
+				addClickToTop();
+				var pathname = location.pathname;
+				switch(pathname) {
+					case '/HomePage/index.html': {setTopbarActive(0)}break;
+					case '/HomePage/aboutUs.html': {setTopbarActive(2)}break;
+					case '/HomePage/joinUs.html': {setTopbarActive(3)}break;
+					default:break;
+				}
 			}
 		});
 	}
