@@ -134,7 +134,7 @@ var page_home = {};
 			}
 			carouselSlide(index + 1);
 			setActive( index + 1, '.one-circle', 'circle-bg' );
-		}, 2000);
+		}, 3000);
 	}
 		
 	//加载首页content html
