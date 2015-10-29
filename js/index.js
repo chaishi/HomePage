@@ -7,18 +7,21 @@
 $(function(){
 	var pathname = location.pathname;
 	switch(pathname) {
-		case '/HomePage/index.html': {
+		case 'index.html': {
 			page_home.getHomeHtml();
 			getTopbarHtml(0);
 		}break;
-		case '/HomePage/aboutUs.html': {
+		case 'aboutUs.html': {
 			getTopbarHtml(2);
 		}break;
-		case '/HomePage/joinUs.html': {
+		case 'joinUs.html': {
 			getTopbarHtml(3);
 			page_hiring.init();
 		}break;
-		default:{}break;
+		default:{
+			page_home.getHomeHtml();
+			getTopbarHtml(0);
+		}break;
 	}
 	getFooterHtml();
 });
@@ -69,7 +72,7 @@ $(function(){
 	window.getTopbarHtml = function(index) {
 		$.ajax({
 			type: "get",
-			url: "/HomePage/_topbar.html",
+			url: "_topbar.html",
 			success: function(data) {
 				$('#topbar').html(data);
 				addClickToTop();
@@ -82,7 +85,7 @@ $(function(){
 	window.getFooterHtml = function() {
 		$.ajax({
 			type: "get",
-			url: "/HomePage/_footer.html",
+			url: "_footer.html",
 			success: function(data) {
 				$('#footer').html(data);
 			}
@@ -101,6 +104,9 @@ var page_home = {};
 
 (function(page_home, undefined){
 	
+	//用于自动轮播的计数器，统计当前已经轮播到哪一屏
+	//var index = 0;
+	
 	//事件绑定
 	function bindEvent() {
 		$('.content-circles').on('click', '.one-circle', function() {
@@ -118,15 +124,28 @@ var page_home = {};
 		var margin = 100 * index;
 		$('.content-screens').animate({marginLeft: '-' + margin + '%'});
 	}
+	
+	//自动轮播
+	function carouselSlide(index) {
+		getSlideScreen(index);
+		setTimeout(function() {
+			if(index === 2) {
+				index = -1;
+			}
+			carouselSlide(index + 1);
+			setActive( index + 1, '.one-circle', 'circle-bg' );
+		}, 2000);
+	}
 		
 	//加载首页content html
 	page_home.getHomeHtml = function(){
 		$.ajax({
 			type: "get",
-			url: "/HomePage/_home.html",
+			url: "_home.html",
 			success: function(data) {
 				$('#content').html(data);
 				bindEvent();
+				carouselSlide(0);
 			}
 		});
 	}
