@@ -1,9 +1,34 @@
-/*
- * @author luoxue
- * @time 20151022
- * @description 橙久首页开发js
- */
 
+/* =============================================================================================
+ * @description 各种接口变量
+ * @author luoxue
+ * @time 20151030
+ ===============================================================================================*/
+var interfaces = {};
+
+(function(interfaces, undefined) {
+	//获取顶部相关Html
+	interfaces.getTopbarHtml = '_topbar.html';
+	
+	//获取底部相关html
+	interfaces.getFooterHtml = '_footer.html';
+	
+	//获取主页contetn相关html
+	interfaces.getHomeHtml = '_home.html';
+	
+	//获取职位列表相关数据
+	interfaces.getPositionList = 'json/position.json';
+	
+	//获取职位描述
+	interfaces.getPositionDesc = 'json/positionDes.json';
+})(interfaces)
+
+
+/* =============================================================================================
+ * @description 根据不同的页面加载不同的内容
+ * @author luoxue
+ * @time 20151020
+ ===============================================================================================*/
 $(function(){
 	var str = location.pathname;
 	var pathname = '/';
@@ -30,6 +55,7 @@ $(function(){
 	}
 	getFooterHtml();
 });
+
 
 /*=================================================================================================
  * @description 公共js 
@@ -77,7 +103,7 @@ $(function(){
 	window.getTopbarHtml = function(index) {
 		$.ajax({
 			type: "get",
-			url: "_topbar.html",
+			url: interfaces.getTopbarHtml,
 			success: function(data) {
 				$('#topbar').html(data);
 				addClickToTop();
@@ -90,7 +116,7 @@ $(function(){
 	window.getFooterHtml = function() {
 		$.ajax({
 			type: "get",
-			url: "_footer.html",
+			url: interfaces.getFooterHtml,
 			success: function(data) {
 				$('#footer').html(data);
 			}
@@ -146,7 +172,7 @@ var page_home = {};
 	page_home.getHomeHtml = function(){
 		$.ajax({
 			type: "get",
-			url: "_home.html",
+			url: interfaces.getHomeHtml,
 			success: function(data) {
 				$('#content').html(data);
 				bindEvent();
@@ -168,10 +194,16 @@ var page_hiring = {};
 
 (function(page, undefined){
 	
+	var positionDesc = {};
+	var $posList = $('.pos-list');
+	var $positionDesc = $('.position-desc');
+	
 	page.init = function() {
 		bindEvent();
+		getPositionDesc();
 	};
 	
+	//事件绑定
 	function bindEvent() {
 		$('.join-city').on('click', '.one-city', cityChange);
 	}
@@ -181,7 +213,64 @@ var page_hiring = {};
 		var index = $(this).index();
 		setActive(index / 2, '.one-city', 'city-active');
 		setActive(index / 2, '.orange-rect', 'visi-show');
+		var city = $(this).find('span').html();
+		switch(city){
+			case "上海": {
+				getPositionListByCity();
+				$positionDesc.show();
+			}break;
+			default: {
+				$posList.html('<span class="one-position display">该城市暂无职位</span>');
+				$positionDesc.hide();
+			}break;
+		}
 	}
 	
+	//职位切换，描述内容更换
+	function positionChange() {
+		var index = $(this).index();
+		var posDesc = positionDesc[index].description;
+		var posRequ = positionDesc[index].requirement;
+		var htmlArr = [];
+		for(var i = 0, len = posDesc.length; i < len; i++) {
+			htmlArr.push('<li>'+posDesc[i]+'</li>');
+		}
+		document.getElementById('positionDesc').innerHTML = htmlArr.join('');
+		
+		htmlArr.length = 0;
+		for(var j = 0, len = posDesc.length; j < len; j++) {
+			htmlArr.push('<li>'+posDesc[j]+'</li>');
+		}
+		document.getElementById('positionRequirement').innerHTML = htmlArr.join('');
+		
+		setActive(index, '.one-position', 'active');
+	}
 	
+	//ajax,根据城市名称获取职位列表
+	function getPositionListByCity() {
+		$.getJSON(
+			interfaces.getPositionList,
+			function(data) {
+				var list = data.position[0].posList;
+				var htmlArr = [];
+				for(var i = 0, len = list.length; i < len; i++) {
+					htmlArr.push('<span class="one-position display">'+list[i]+'</span>');
+				}
+				$posList.html(htmlArr.join(''));
+				setActive(0, '.one-position', 'active');
+				$posList.on('click', '.one-position', positionChange);
+			}
+		);
+	}
+
+	//ajax,获取职位描述
+	function getPositionDesc() {
+		$.getJSON(
+			interfaces.getPositionDesc,
+			function(data) {
+				positionDesc = data.descList;
+			}
+		);
+	}
 })(page_hiring);
+

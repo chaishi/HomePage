@@ -606,6 +606,15 @@ hr {
 	letter-spacing: .1em;
 }
 
+.one-position:hover {
+	color: #EE6922;
+	cursor: pointer;
+}
+
+.pos-list .active {
+	color: #EE6922;
+}
+
 .position-title {
 	color: #1b0c0c;
 	margin: 25px 0 0 10px;
@@ -622,6 +631,10 @@ hr {
 	font-size: 19px;
 	color: #1b0c0c;
 	margin: 20px 0 0 10px;
+}
+
+.position-desc {
+	height: 550px
 }
 
 .position-desc ol {
