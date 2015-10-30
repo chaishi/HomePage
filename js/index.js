@@ -5,16 +5,21 @@
  */
 
 $(function(){
-	var pathname = location.pathname;
+	var str = location.pathname;
+	var pathname = '/';
+	var arr = str.match(/\/\w+.html$/);
+	if(arr) {
+		pathname = arr[0];
+	}
 	switch(pathname) {
-		case 'index.html': {
+		case '/index.html': {
 			page_home.getHomeHtml();
 			getTopbarHtml(0);
 		}break;
-		case 'aboutUs.html': {
+		case '/aboutUs.html': {
 			getTopbarHtml(2);
 		}break;
-		case 'joinUs.html': {
+		case '/joinUs.html': {
 			getTopbarHtml(3);
 			page_hiring.init();
 		}break;
@@ -42,7 +47,7 @@ $(function(){
 		var pageTitle = $(this).html();
 		switch(pageTitle) {
 			case '首页': {location.href = 'index.html';}break;
-			case '公司': {}break;
+			case '公司动态': {}break;
 			case '关于我们': {location.href = 'aboutUs.html';}break;
 			case '招贤纳士': {location.href = 'joinUs.html';}break;
 			default:break;
