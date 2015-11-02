@@ -13,9 +13,6 @@ var interfaces = {};
 	//获取底部相关html
 	interfaces.getFooterHtml = '_footer.html';
 	
-	//获取主页contetn相关html
-	interfaces.getHomeHtml = '_home.html';
-	
 	//获取职位列表相关数据
 	interfaces.getPositionList = 'json/position.json';
 	
@@ -37,23 +34,13 @@ $(function(){
 		pathname = arr[0];
 	}
 	switch(pathname) {
-		case '/index.html': {
-			page_home.getHomeHtml();
-			getTopbarHtml(0);
-		}break;
-		case '/aboutUs.html': {
-			getTopbarHtml(2);
-		}break;
-		case '/joinUs.html': {
-			getTopbarHtml(3);
-			page_hiring.init();
-		}break;
-		default:{
-			page_home.getHomeHtml();
-			getTopbarHtml(0);
-		}break;
+		case '/index.html': {page_home.init();}break;
+		case '/aboutUs.html': {}break;
+		case '/joinUs.html': {page_hiring.init();}break;
+		default:{page_home.init();}break;
 	}
 	getFooterHtml();
+	getTopbarHtml();
 });
 
 
@@ -79,11 +66,8 @@ $(function(){
 		})
 	}
 	
-	/*
-	 * @description 加载topbar
-	 * @param {number} index eg: index = 3, 在招贤纳士页面，便将对应的topbar背景色切换
-	 */
-	window.getTopbarHtml = function(index) {
+	// 加载topbar
+	window.getTopbarHtml = function() {
 		$.ajax({
 			type: "get",
 			url: interfaces.getTopbarHtml,
@@ -149,17 +133,9 @@ var page_home = {};
 		}, 3000);
 	}
 		
-	//加载首页content html
-	page_home.getHomeHtml = function(){
-		$.ajax({
-			type: "get",
-			url: interfaces.getHomeHtml,
-			success: function(data) {
-				$('#content').html(data);
-				bindEvent();
-				carouselSlide(0);
-			}
-		});
+	page_home.init = function() {
+		bindEvent();
+		carouselSlide(0);
 	}
 	
 })(page_home)
