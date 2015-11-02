@@ -154,10 +154,14 @@ var page_hiring = {};
 	var positionDesc = {};
 	var $posList = $('.pos-list');
 	var $positionDesc = $('.position-desc');
+	//职位列表
+	var positionList = '';
+	var posListDom = document.getElementById('positionRequirement');
 	
 	page.init = function() {
 		bindEvent();
 		getPositionDesc();
+		getPositionListByCity();
 	};
 	
 	//事件绑定
@@ -177,6 +181,7 @@ var page_hiring = {};
 				$positionDesc.show();
 			}break;
 			default: {
+				positionList = $posList.html();
 				$posList.html('<span class="one-position display">该城市暂无职位</span>');
 				$positionDesc.hide();
 			}break;
@@ -198,13 +203,17 @@ var page_hiring = {};
 		for(var j = 0, len = posDesc.length; j < len; j++) {
 			htmlArr.push('<li>'+posDesc[j]+'</li>');
 		}
-		document.getElementById('positionRequirement').innerHTML = htmlArr.join('');
+		posListDom.innerHTML = htmlArr.join('');
 		
 		setActive(index, '.one-position', 'active');
 	}
 	
 	//ajax,根据城市名称获取职位列表
 	function getPositionListByCity() {
+		if($posList.find('.one-position')[0]) {
+			$posList.html(positionList);
+			return;
+		}
 		$.getJSON(
 			interfaces.getPositionList,
 			function(data) {
