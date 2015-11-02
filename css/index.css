@@ -78,6 +78,10 @@ hr {
 	width: 570px;
 }
 
+.topbar-left h1 {
+	text-indent: -999em;
+}
+
 .topbar-right li{
 	width: 122px;
 	height: 100%;
@@ -87,16 +91,25 @@ hr {
 	color: #333;
 }
 
-.topbar-right li:hover {
-	cursor: pointer;
+.topbar-right a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+}
+
+.topbar-right a:hover,
+.topbar-right a:focus,
+#page-home .li-home a,
+#page-aboutUs .li-aboutUs a,
+#page-joinUs .li-joinUs a {
 	color: #fff;
 	background-color: #ee6922;
 }
 
-.topbar-right .topbar-bg {
+/*.topbar-right .topbar-bg {
 	color: #fff;
 	background-color: #ee6922;
-}
+}*/
 
 /* ==============================================================
  * @deacription content 模块儿

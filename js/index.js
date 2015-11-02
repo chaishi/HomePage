@@ -63,23 +63,6 @@ $(function(){
 
 (function(window, undefined){
 	
-	//为topbar添加点击事件
-	function addClickToTop() {
-		$('.topbar-right').on('click', 'li', switchPage);
-	}
-	
-	//页面切换
-	function switchPage() {
-		var pageTitle = $(this).html();
-		switch(pageTitle) {
-			case '首页': {location.href = 'index.html';}break;
-			case '公司动态': {}break;
-			case '关于我们': {location.href = 'aboutUs.html';}break;
-			case '招贤纳士': {location.href = 'joinUs.html';}break;
-			default:break;
-		}
-	}
-	
 	/*
 	 * @description 将列表中的某一项设为激活状态
 	 * @param {Number} index 将下标为index的那一项设为激活状态
@@ -106,8 +89,6 @@ $(function(){
 			url: interfaces.getTopbarHtml,
 			success: function(data) {
 				$('#topbar').html(data);
-				addClickToTop();
-				setActive(index, '.topbar-right li', 'topbar-bg');
 			}
 		});
 	}
